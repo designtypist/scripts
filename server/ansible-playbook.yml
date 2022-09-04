@@ -1,0 +1,11 @@
+# Monolithic Server Install
+## "mariadb/mysql, npm, yarn, python, composer, php, nginx, docker, portainer" 
+hosts: example
+  tasks:
+    - name: "add user jchung"
+      user:
+        name: jchung
+        state: present
+  roles: 
+    - role: linux-system-roles.cockpit
+    - role : viasite-ansible.zsh
