@@ -1,11 +1,19 @@
 # Monolithic Server Install
 ## "mariadb/mysql, npm, yarn, python, composer, php, nginx, docker, portainer" 
-hosts: example
-  tasks:
-    - name: "add user jchung"
-      user:
-        name: jchung
-        state: present
-  roles: 
-    - role: linux-system-roles.cockpit
-    - role : viasite-ansible.zsh
+  - hosts: server1
+    tasks:
+      - name: "add user jchung"
+        user:
+          name: jchung
+          state: present
+      - name: "install zsh"
+        apt:
+          name: zsh
+          state: present
+    roles: 
+      - role: linux-system-roles.cockpit
+    post_tasks:
+      - name: "change user shell to zsh"
+        ansible.builtin.command:
+          cmd: "chsh -s $(which zsh)"
+
