@@ -1,0 +1,25 @@
+# Web Development Server Start
+
+## Basic tools
+install basic build tools include: 
+- build-essential
+- git
+- curl
+- file
+
+install brew
+```
+test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
+test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+test -r ~/.bash_profile && echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.bash_profile
+echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.profile
+```
+
+install nvm
+
+## Terminal enhancements 
+install screen and .screenrc config to home directory
+install vim and vimrc
+install zsh
+
+
