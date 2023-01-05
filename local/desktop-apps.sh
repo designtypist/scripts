@@ -3,7 +3,7 @@
 # synaptic (apt dependency manager) && stacer (linux system optimization)
 sudo apt-get install synaptic && sudo apt-get install stacer
 
-# cryptomator 
+# cryptomator
 sudo add-apt-repository ppa:sebastian-stenzel/cryptomator
 sudo apt-get update && sudo apt-get install cryptomator -y
 
@@ -11,7 +11,7 @@ sudo apt-get update && sudo apt-get install cryptomator -y
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
 sudo install -o root -g root -m 644 packages.microsoft.gpg /usr/share/keyrings/
 sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
-sudo apt-get install apt-transport-https | 
+sudo apt-get install apt-transport-https |
 sudo apt-get update && sudo apt-get install code -y
 
 # brave browser
@@ -31,7 +31,7 @@ mkdir ~/apps && mv activitywatch ~/apps && cd ~/apps/activitywatch
 ./aw-qt # access via web using http://localhost:5600/
 
 # spotify
-curl -sS https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | sudo apt-key add - 
+curl -sS https://download.spotify.com/debian/pubkey_5E3C45D7B312C643.gpg | sudo apt-key add -
 echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
 sudo apt-get update && sudo apt-get install spotify-client
 
@@ -44,3 +44,6 @@ rm ./discord.deb
 wget https://downloads.slack-edge.com/linux_releases/\slack-desktop-4.11.1-amd64.deb #REMINDER: update version
 sudo apt install ./slack-desktop-*.deb
 rm ./slack-desktop-*.deb
+
+# vlc
+sudo apt install vlc -y
