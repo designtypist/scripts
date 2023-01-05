@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# gdebi-core (must-have)
-sudo apt install gdebi-core
-
 # synaptic (apt dependency manager) && stacer (linux system optimization)
 sudo apt-get install synaptic && sudo apt-get install stacer
 
@@ -40,10 +37,10 @@ sudo apt-get update && sudo apt-get install spotify-client
 
 # discord
 wget -O discord.deb "https://discordapp.com/api/download?platform=linux&format=deb"
-sudo gdebi ./discord.deb
+sudo apt install ./discord.deb
 rm ./discord.deb
 
 # [slack](https://slack.com/intl/en-ca/downloads/linux)
 wget https://downloads.slack-edge.com/linux_releases/\slack-desktop-4.11.1-amd64.deb #REMINDER: update version
-sudo gdebi ./slack-desktop-*.deb
+sudo apt install ./slack-desktop-*.deb
 rm ./slack-desktop-*.deb
