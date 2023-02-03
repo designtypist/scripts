@@ -1,7 +1,9 @@
 # Web Development Server Start
 
+Before running run the server-start.sh bash script which will install ssh and ansible
+
 ## Basic tools
-install basic build tools include: 
+install basic build tools include:
 - build-essential
 - git
 - curl
@@ -17,9 +19,10 @@ echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.profile
 
 install nvm
 
-## Terminal enhancements 
-install screen and .screenrc config to home directory
-install vim and vimrc
-install zsh
+## Terminal enhancements
+install screen
+install vim
 
-
+## Terminal configuration setup
+copy config for screen
+copy config for vim

@@ -1,0 +1,29 @@
+---
+- name: install packages
+  hosts: localhost
+  connection: local
+  become: true
+  tasks:
+    - name: install basic tools
+      apt:
+        name: "{{item}}"
+        state: latest
+      loop:
+        - build-essential
+        - curl
+        - git
+        - file
+        - procps
+    - name: install terminal tools
+      apt:
+        name: "{{item}}"
+        state: latest
+      loop:
+        - screen
+        - vim
+        - zsh
+    - name: install homebrew
+      become: false
+      shell: |
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+

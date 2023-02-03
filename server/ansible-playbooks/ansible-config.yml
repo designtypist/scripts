@@ -1,0 +1,30 @@
+---
+- name: setup terminal apps configs
+  hosts: localhost
+  connection: local
+  become: true
+  roles:
+    - role: gantsign.oh-my-zsh
+      users:
+        - username: jchung
+  tasks:
+    - name: copy config for screen
+      become: false
+      get_url:
+        url: https://raw.githubusercontent.com/designtypist/configs/master/.screenrc
+        dest: ~/.screenrc
+        mode: '0664'
+    - name: copy config for vim
+      become: false
+      get_url:
+        url: https://raw.githubusercontent.com/designtypist/configs/master/.vimrc
+        dest: ~/.vimrc
+        mode: '0664'
+    - name: change shell
+      shell: "chsh -s $(which zsh)"
+    - name: add homebrew to zsh
+      shell: |
+        echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> ~/.zshrc
+        source ~/.zshrc
+        
+  
