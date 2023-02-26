@@ -1,0 +1,6 @@
+[webservers]
+192.168.1.91
+
+[webservers:vars]
+ansible_user=jchung
+ansible_ssh_private_key_file=/Users/jchung/.ssh/id_rsa

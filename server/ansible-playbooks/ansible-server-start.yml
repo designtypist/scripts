@@ -1,6 +1,5 @@
 - name: Initial server setup 
-  hosts: localhost
-  connection: local
+  hosts: webservers
   become: true
   tasks: 
     - name: Perform a dist-upgrade
@@ -43,9 +42,17 @@
         dest: ~/.vimrc
         mode: '0664'
 
-#    - name: Install bash-it  
-      # git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
-      # ~/.bash_it/install.sh
+    - name: Clone the repository bash-it
+      become: false
+      git:
+        repo: https://github.com/Bash-it/bash-it.git
+        dest: ~/.bash_it
+        clone: yes
+        update: yes
+    # issue running due to interactive shell
+    - name: Run the bash-it script
+      become: false
+      shell: ~/.bash_it/install.sh
     
     - name: Remove dependencies that are no longer required.
       apt:
