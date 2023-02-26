@@ -49,10 +49,9 @@
         dest: ~/.bash_it
         clone: yes
         update: yes
-    # issue running due to interactive shell
     - name: Run the bash-it script
       become: false
-      shell: ~/.bash_it/install.sh
+      shell: ~/.bash_it/install.sh --silent -f
     
     - name: Remove dependencies that are no longer required.
       apt:

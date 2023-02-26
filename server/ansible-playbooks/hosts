@@ -1,6 +1,6 @@
 [webservers]
-192.168.1.91
+<ip-addresses>
 
 [webservers:vars]
-ansible_user=jchung
-ansible_ssh_private_key_file=/Users/jchung/.ssh/id_rsa
+ansible_user=<username>
+ansible_ssh_private_key_file=~/.ssh/id_rsa
